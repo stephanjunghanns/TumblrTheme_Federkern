@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{Title}{block:PostTitle}: {PostTitle}{/block:PostTitle}</title>
+    {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+    <meta name="viewport" content="width=device-width">
+
+    <meta name="text:Footer Info" content=""/>
+    <meta name="text:Google Analytics ID" content=""/>
+
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="apple-touch-icon" href="{PortraitURL-128}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    
+    <style type="text/css">{CustomCSS}</style>
+  </head>
+  <body>
+  
+	<!--[if lt IE 7]>
+		<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+	<![endif]-->
+
+	<header>
+		<h1><a href="/">{Title}</a></h1>
+		{block:Description}<p id="description">{Description}</p>{/block:Description}
+	</header>
+
+
+	{block:Posts}
+	
+		{block:Photo}
+			<article class="post photo">
+				<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+			</article>
+		{/block:Photo}
+			
+	{/block:Posts}
+	
+	<footer>
+		{block:PermalinkPagination}
+			<nav>
+				{block:PreviousPost}<a href="{PreviousPost}">« {lang:Previous}</a>{/block:PreviousPost} 
+				{block:NextPost}<a href="{NextPost}">{lang:Next} »</a>{/block:NextPost} 
+			</nav>
+		{/block:PermalinkPagination}
+	
+		{block:IndexPage}
+		{block:Pagination}
+			<nav>
+				{block:PreviousPage}<a href="{PreviousPage}">« {lang:Newer}</a>{/block:PreviousPage}
+				{block:NextPage}<a href="{NextPage}">{lang:Older} »</a>{/block:NextPage}
+			</nav>
+		{/block:Pagination}
+		{/block:IndexPage}
+		
+		<p>{text:Footer Info}</p>
+	</footer>
+	
+{block:IfGoogleAnalyticsID}<script>var _gaq=[['_setAccount','{text:Google Analytics ID}'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'));</script>{/block:IfGoogleAnalyticsID}    
+</body>
+</html>
