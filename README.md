@@ -1,1 +1,1 @@
-# Tumblr Blank Theme (WIP)
+Tumblr Theme for federkern.tumblr.com
